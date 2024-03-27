@@ -106,7 +106,7 @@ namespace d_treenode {
 		  std::shared_ptr<Stmt> stmt1;
 		  std::shared_ptr<Stmt> stmt2;
 
-		  Seq(const std::shared_ptr<Stmt> &s1, const std::shared_ptr<Stmt> &s2) : stmt1(s1), stmt2(s2) {}
+		  Seq(const std::shared_ptr<Stmt> &s1, const std::shared_ptr<Stmt> &s2) : stmt1(std::move(s1)), stmt2(std::move(s2)) {}
 
 		  void gen(int begin, int after) override;
 

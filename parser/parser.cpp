@@ -83,8 +83,11 @@ namespace d_parser {
 	 std::shared_ptr<Stmt> Parser::stmts() {
 		 if (lexTok->token == '}')
 			 return Stmt::Null;
-		 else
-			 return std::make_shared<Stmt>(Seq(stmt(), stmts()));
+		 else {
+			 std::shared_ptr<Stmt> s = stmt();
+			 std::shared_ptr<Stmt> ss = stmts();
+			 return std::make_shared<Stmt>(Seq(s, ss));
+		 }
 	 }
 
 	 std::shared_ptr<Stmt> Parser::stmt() {
