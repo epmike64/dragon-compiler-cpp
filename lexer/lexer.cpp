@@ -14,6 +14,9 @@ namespace d_lex {
 	 }
 
 	 void Lexer::readCh() {
+		 if(textIndex >= text.size()) {
+			 throw std::runtime_error("End of file reached.");
+		 }
 		 currCh = text.at(textIndex++);
 	 }
 
