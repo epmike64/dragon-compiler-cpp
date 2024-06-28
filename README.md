@@ -1,3 +1,4 @@
-# Dragon Book Compiler : From Java 2 C++
+# Dragon Book Compiler in C++
 
-POC 
+POC.
+Ported Dragon Book compiler to C++.
